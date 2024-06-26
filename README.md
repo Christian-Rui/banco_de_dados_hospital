@@ -20,12 +20,6 @@ Deseja-se ainda informatizar a receita do médico, de maneira que, no encerramen
 ## Parte 2
 - Adicionando mais entidades
   
-![DERHospitalParte2 drawio](https://github.com/Christian-Rui/banco_de_dados_hospital/assets/113655013/80a65af8-467b-4046-a30d-107c8c000dd3)
-
----
-
-- Criando o arquivo SQL no dbdesigner
-
 Após a primeira versão do projeto de banco de dados para o sistema hospitalar, notou-se a necessidade de expansão das funcionalidades, incluindo alguns requisitos essenciais a essa versão do software. As funcionalidades em questão são para o controle na internação de pacientes. Será necessário expandir o Modelo ER desenvolvido e montar o banco de dados, criando as tabelas para o início dos testes.
 
 Entender do assunto
@@ -42,6 +36,12 @@ Cada tipo de quarto tem sua descrição e o seu valor diário (a princípio, o h
 Também é necessário controlar quais profissionais de enfermaria estarão responsáveis por acompanhar o paciente durante sua internação. Para cada enfermeiro(a), é necessário nome, CPF e registro no conselho de enfermagem (CRE).
 
 A internação, obviamente, é vinculada a um paciente – que pode se internar mais de uma vez no hospital – e a um único médico responsável.
+  
+![DERHospitalParte2 drawio](https://github.com/Christian-Rui/banco_de_dados_hospital/assets/113655013/80a65af8-467b-4046-a30d-107c8c000dd3)
+
+---
+
+- Criando o arquivo SQL no dbdesigner
 
 **Mãos a obra?**
 Faça a ligação do diagrama acima ao diagrama desenvolvido na atividade antrior, construindo relacionamentos com entidades relacionadas. E eleve o seu diagrama para que já selecionando os tipos de dados que serão trabalhados e em quais situações. 
