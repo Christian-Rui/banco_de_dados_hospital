@@ -155,3 +155,42 @@ CREATE TABLE `internacao_enfermeiro` (
 ```MySQL
 ALTER TABLE `medicos` ADD CONSTRAINT `medicos_fk_convenio` FOREIGN KEY (`id_convenio`) REFERENCES `convenio`(`id_convenio`);
 ```
+
+## PARTE 4 - Alterando o banco de dados
+- Utilizando update para alterar dados
+
+Um banco de dados pode sofrer alterações ao longo da sua concepção e do seu desenvolvimento. Nesse momento devemos nos preparar para atualizar nossas estratégias. 
+
+**Mãos a Obra.**
+Pensando no banco que já foi criado para o Projeto do Hospital, realize algumas alterações nas tabelas e nos dados usando comandos de atualização e exclusão:
+
+Crie um script que adicione uma coluna “em_atividade” para os médicos, indicando se ele ainda está atuando no hospital ou não. 
+
+Crie um script para atualizar ao menos dois médicos como inativos e os demais em atividade.
+
+### scripts feitos
+
+- Instrução SQL para criar uma coluna chamada "em_atividade" que recebe valores booleanos (true/verdadeiro ou false/false)
+```MySQL
+ALTER TABLE medicos ADD COLUMN em_atividade BOOLEAN DEFAULT TRUE;
+```
+
+---
+
+-Instrução SQL para desativas e reativar a segurança que permite atualizar os dados
+```MySQL
+SET SQL_SAFE_UPDATES = 0;
+
+/*outras instruções SQL*/
+
+SET SQL_SAFE_UPDATES = 1;
+```
+
+---
+
+- utilizando script com UPDATE para setar novos valores na coluna em_atividade
+```MySQL
+UPDATE medicos SET em_atividade = FALSE WHERE id_medico IN (1, 8);
+UPDATE medicos SET em_atividade = TRUE WHERE id_medico NOT IN (1, 8);
+```
+
